@@ -1,0 +1,17 @@
+<ul>
+    <li *ngFor="let cliente of clientes">{{ cliente.nome }} - {{ cliente.idade }} anos</li>
+  </ul>
+
+  <h2>Clientes</h2>
+<ul>
+  <li *ngFor="let cliente of clientes">
+    ID: {{ cliente.id }} - {{ cliente.nome }} {{ cliente.sobrenome }} (CPF: {{ cliente.cpf }}) - {{ cliente.idade }} anos - {{ cliente.endereco }}
+  </li>
+</ul>
+<button (click)="mostrarClientesAcimaDe60()">Mostrar Clientes > 60 anos</button>
+<p *ngIf="clientesAcimaDe60.length === 0">Não existem clientes acima de 60 anos.</p>
+<ul *ngIf="clientesAcimaDe60.length > 0">
+  <li *ngFor="let cliente of clientesAcimaDe60">
+    {{ cliente.nome }} {{ cliente.sobrenome }} - {{ cliente.idade }} anos
+  </li>
+</ul>
